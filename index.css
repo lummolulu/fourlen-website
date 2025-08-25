@@ -1,0 +1,177 @@
+#telaLogin {
+  overflow: hidden;
+  height: 50vh;
+  transition: 0.2s;
+  animation: voltaNormal 0.2s ease;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+}
+
+/* #telaLogin:hover {
+  animation: alturaLogin 0.2s ease-in-out;
+  animation-fill-mode: forwards;
+} */
+
+#conteúdoLogin {
+  min-width: 430px;
+  width: 40%;
+  height: fit-content;
+  align-self: center;
+  margin: auto;
+  margin: 15% auto 15% auto;
+  overflow: visible;
+}
+
+#bv {
+  background: linear-gradient(rgb(245, 196, 123) 70%, rgb(216, 114, 30));
+  filter: drop-shadow(2px 4px 2px rgba(185, 70, 3, 0.849));
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: left;
+  margin: 0px;
+  font-size: 30px;
+}
+
+#fourlenblur {
+  transform: skew(-10deg);
+  filter: blur(2px);
+  text-align: right;
+  position: relative;
+  top: -20px;
+  margin: 0px;
+  font-size: 50px;
+  transition: 0.1s;
+  user-select: none;
+}
+#fourlenblur span {
+  background: linear-gradient(rgb(255, 255, 255) 50%, rgb(255, 158, 12) 100%);
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  filter: drop-shadow(2px 3px 0 rgba(185, 70, 3, 0.849));
+  font-weight: bold;
+  display: inline-block;
+  top: 0;
+  transition: transform 0.3s, color 0.5s;
+  transform: translateY(0) rotate(0);
+  position: relative;
+}
+
+
+#fourlenblur span:hover {
+  transition: transform 0s, color 0.1s;
+  color: rgb(255, 255, 255);
+  transform: translateY(-10px) rotate(var(--rotaçãoAleatória));
+  filter: drop-shadow(0 5px 3px rgb(94, 30, 0));
+}
+
+
+@keyframes rotatezinho {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+#entrarBtn {
+  padding: 0;
+  width: 100%;
+  margin-top: 60px;
+  overflow: hidden;
+  height: 50px;
+  border: #602a1a solid 2px;
+  border-radius: 5px;
+  background-color: #ffb546;
+  box-shadow: /*brilho interno */ inset 0px -10px 20px #ff7b0f, inset 0px 8px 5px #fada9f,
+    0 5px 5px rgba(0, 0, 0, 0.445);
+  transition: 0.1s;
+}
+
+#entrarBtn p,
+#entrarBtn input {
+  font-weight: bold;
+  font-size: 25px;
+  color: #602a1a;
+  text-shadow: 0px 1px 0 rgba(255, 208, 154, 0.76), 0 -1px 0 rgb(43, 20, 13);
+  top: -17px;
+  letter-spacing: 0.07rem;
+  margin-bottom: 0;
+}
+#entrarBtn p {
+  position: relative;
+  font-family: Agency FB;
+  transform: scale(2.5, 1.2) skew(-10deg);
+}
+
+#entrarBtn:hover {
+  background-color: #f3a838;
+  box-shadow: inset 0px -10px 20px #b6510d, 0 5px 5px rgba(0, 0, 0, 0.445), inset 0px 10px 10px#ffeedb;
+}
+
+#entrarBtn:hover p,
+#entrarBtn:hover input {
+  text-shadow: 0px 1px 0 rgba(255, 145, 20, 0.562), 0 -1px 0 rgb(43, 20, 13);
+}
+
+#entrarBtn:active {
+  background-color: #ee592b;
+  box-shadow: inset 0px -10px 20px #72290c, 0 5px 5px rgba(0, 0, 0, 0.445), inset 0px 10px 10px#ffb24e;
+}
+
+#entrarBtn input::placeholder {
+  color: #602a1a;
+
+  opacity: 50%;
+}
+
+#convidado {
+  font-size: 16px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.527);
+  margin-bottom: 0;
+}
+
+#convidado u {
+  cursor: url("media/cursorPointerfourlen.png"), auto;
+}
+
+#awbofrente,
+#awbopose1 {
+  position: absolute;
+  filter: invert(100) drop-shadow(0 7px 5px black);
+  width: 15%;
+  height: max-content;
+}
+#awbofrente {
+  left: 2%;
+}
+
+#awbopose1 {
+  right: 2%;
+}
+
+.inputzinho {
+  font-family: Verdana;
+  background: none;
+  width: 95%;
+}
+
+.inputzinho:enabled,
+.inputzinho:active {
+  border: none;
+  outline: none;
+}
+
+#chave {
+  animation: giro 2s linear infinite;
+  animation-play-state: paused;
+}
+
+#chave:hover {
+  animation-play-state: running;
+}

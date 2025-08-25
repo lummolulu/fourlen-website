@@ -1,0 +1,262 @@
+@font-face {
+  font-family: "Agency FB";
+  src: local("Agency FB"), url("fonts/Agency_FB/agencyfb_reg.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Agency FB";
+  src: local("Agency FB Bold"), url("fonts/Agency_FB/agencyfb_bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Verdana";
+  src: local("Verdana"), url("fonts/Verdana/Verdana.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Verdana";
+  src: local("Verdana Bold"), url("fonts/Verdana/Verdana-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Verdana";
+  src: local("Verdana Italic"), url("fonts/Verdana/Verdana-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Verdana";
+  src: local("Verdana Bold Italic"), url("fonts/Verdana/Verdana-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+body {
+  background: radial-gradient(circle at 20% 10%, rgb(195, 70, 42), transparent 30%),
+    radial-gradient(circle at 80% 90%, rgb(195, 70, 42), transparent 50%),
+    linear-gradient(rgb(97, 41, 25), rgb(75, 27, 16));
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  cursor: url("media/cursorfourlen.png"), auto;
+
+  font-family: Verdana /*Arial Rounded MT*/;
+}
+
+button {
+  cursor: url("media/cursorPointerfourlen.png"), auto;
+}
+
+::selection {
+  background-color: rgba(0, 0, 0, 0.397);
+  color: rgb(255, 255, 255);
+}
+
+#textura1 {
+  background-image: url(media/Texturelabs_Metal_124M.jpg);
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  user-select: none;
+  pointer-events: none;
+  opacity: 20%;
+  mix-blend-mode: overlay;
+}
+
+#textura2 {
+  background-image: url(media/Texturelabs_Paper_153M.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  user-select: none;
+  pointer-events: none;
+  opacity: 100%;
+  mix-blend-mode: color-dodge;
+}
+
+#textura3 {
+  background-image: url(media/Texturelabs_Fabric_121S.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  user-select: none;
+  pointer-events: none;
+  opacity: 15%;
+  mix-blend-mode: color-dodge;
+}
+
+#textura4 {
+  background-image: url(media/Texturelabs_Grunge_354S.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  user-select: none;
+  pointer-events: none;
+  opacity: 10%;
+  mix-blend-mode: color-burn;
+}
+
+.minimizar {
+  max-height: 0;
+  transition: 0.3s ease;
+}
+
+.esconder {
+  display: none;
+}
+
+.mouse-cursor-gradient-tracking {
+  --x: 50%;
+  --y: 50%;
+  position: relative;
+  overflow: hidden; /* Para conter o pseudo-elemento */
+}
+
+.mouse-cursor-gradient-tracking::before {
+  --size: 0;
+  content: "";
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(closest-side, rgba(255, 195, 116, 0.5), transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.05s ease, height 0.05s ease, opacity 0.3s;
+  pointer-events: none; /* Permite interação com elementos abaixo */
+  z-index: -1;
+}
+
+.mouse-cursor-gradient-tracking:hover::before {
+  --size: 300px;
+}
+
+body:has(#fourlenblur span:hover) .mouse-cursor-gradient-tracking::before {
+  opacity: 40%;
+  transition: opacity 0.3s;
+}
+
+.scroller {
+  scrollbar-color: rgb(255, 188, 62) transparent;
+}
+
+.scroller:active {
+  scrollbar-color: rgb(255, 117, 62) transparent;
+}
+
+.janela {
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  box-shadow: 0px 20px 40px rgba(8, 1, 1, 0.733);
+}
+
+.titleBar {
+  background: radial-gradient(closest-side, rgba(243, 188, 37, 0.541), transparent),
+    radial-gradient(circle at 50% 30px, rgba(255, 195, 32, 0.712), transparent 25%),
+    linear-gradient(90deg, rgba(230, 151, 54, 0.692), transparent 4%),
+    linear-gradient(-90deg, rgba(230, 152, 54, 0.692), transparent 4%),
+    linear-gradient(rgba(230, 152, 54, 1), #b03523 50%);
+
+  text-align: left;
+  display: flex;
+  padding-left: 1px;
+  font-size: 20px;
+  overflow: hidden;
+  border: #602a1a solid 2px;
+  border-bottom: hidden;
+  color: white;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.596);
+  height: 30px;
+}
+
+.titleBar img {
+  filter: drop-shadow(0 2px 2px rgba(255, 255, 255, 0.555));
+  max-width: 26px;
+  max-height: 26px;
+  margin: auto 0 auto 2px;
+}
+
+.titleBar p {
+  position: relative;
+  padding-left: 5px;
+  top: -17px;
+}
+
+.telas {
+  max-height: 1000px;
+  overflow: hidden;
+  z-index: 0;
+  background-image: url(media/texturelabsvidro.png); /* fallback*/
+  background-image: linear-gradient(rgba(255, 151, 40, 0.801), rgba(245, 101, 34, 0.856)),
+    url(media/texturelabsvidro.png);
+  border: #602a1a solid 2px;
+  box-shadow: inset 0px -10px 50px rgba(75, 19, 5, 0.651);
+}
+
+/* .imgContainer {
+  position: relative;
+  border-radius: 10px; 
+} */
+
+/*.imgContainer::after {
+   border-radius: 10px;
+
+   content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.658); 
+} */
+
+@keyframes alturaLogin {
+  0% {
+  }
+  /* 25% {
+    height: 54vh;
+  } */
+  100% {
+    height: 53vh;
+  }
+}
+
+@keyframes voltaNormal {
+  0% {
+    height: 53vh;
+  }
+  100% {
+    height: 50vh;
+  }
+}
+
+@keyframes giro {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
