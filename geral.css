@@ -121,7 +121,7 @@ button {
 }
 
 .minimizar {
-  max-height: 0;
+  max-height: 0vh;
   transition: 0.3s ease;
 }
 
@@ -159,13 +159,24 @@ body:has(#fourlenblur span:hover) .mouse-cursor-gradient-tracking::before {
   opacity: 40%;
   transition: opacity 0.3s;
 }
-
-.scroller {
-  scrollbar-color: rgb(255, 188, 62) transparent;
+ 
+.scroller ::-webkit-scrollbar {
+  background: transparent;
+  height: 5px;
+  width: 5px;
 }
 
-.scroller:active {
-  scrollbar-color: rgb(255, 117, 62) transparent;
+.scroller ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.575);
+  
+}
+
+.scroller ::-webkit-scrollbar:active {
+  background: blue;
+}
+
+.scroller ::-webkit-scrollbar-thumb:active {
+  background: yellow;
 }
 
 .janela {

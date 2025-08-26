@@ -1,5 +1,5 @@
 .janela {
-  width: 80%;
+  width: 90%;
 }
 
 #telaNotícias {
@@ -8,6 +8,7 @@
   overflow-y: hidden;
   white-space: nowrap;
   padding: 7px;
+  padding-bottom: 20px
 }
 
 .notícia {
