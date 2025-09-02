@@ -1,8 +1,7 @@
-.janela {
-  width: 90%;
-}
 
 #telaNotícias {
+  display: flex;
+  flex-direction: column;
   height: 25vh;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -44,7 +43,7 @@
 
 #mainPageWindows {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   gap: 15px;
 }
